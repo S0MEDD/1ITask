@@ -26,19 +26,26 @@ Person::Person(const Person& P) {
 	Final = P.Final;
 };
 Person& Person::operator=(const Person& P) {
-if (this == &P) return *this;
-Name = P.Name;
-Surname = P.Surname;
-HW = P.HW;
-Exam = P.Exam;
-Final = P.Final;
- return *this;
-}
+	if (this == &P) return *this;
+	Name = P.Name;
+	Surname = P.Surname;
+	HW = P.HW;
+	Exam = P.Exam;
+	Final = P.Final;
+	return *this;
+};
 Person::~Person() {
 	Name.clear();
 	Surname.clear();
 	HW.clear();
 	Exam = 0;
 	Final = 0.0;
+};
+	void Person::printPerson() {
+		///cout << Name << " : " << Surname << " | " << Final << endl;
+		cout << Name << " : " << Surname << " | ";
+		for (auto& ref : HW) cout << ref << " : ";
+		cout << Exam << " ; final points: " 
+			<< Final << endl;
+	}
 	
-}
