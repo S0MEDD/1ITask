@@ -2,8 +2,10 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <numeric>
 
 using std::cout;
+using std::cin;
 using std::string;
 using std::vector;
 
@@ -36,5 +38,8 @@ public:
 	///overloaded cin
 	///overloaded cout
 	/// final point calculation from average or median
+	void printPerson() {
+		cout << Name << " : " << Surname << " | " << Final << endl;
+	}
 };
 
