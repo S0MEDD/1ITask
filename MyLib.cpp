@@ -1,11 +1,11 @@
-#include "Mylib.h"
+#include "Mylib1.h"
 
 int minimum(int a, int b) {
 	int temp = (a < b) ? a : b;
 	return temp;
 }
 
-Person::Person(){
+Person::Person() {
 	Name = ""; Surname = "";
 	Exam = 0; Final = 0.0;
 	HW.clear();
@@ -41,11 +41,11 @@ Person::~Person() {
 	Exam = 0;
 	Final = 0.0;
 };
-	void Person::printPerson() {
-		///cout << Name << " : " << Surname << " | " << Final << endl;
-		cout << Name << " : " << Surname << " | ";
-		for (auto& ref : HW) cout << ref << " : ";
-		cout << Exam << " ; final points: " 
-			<< Final << endl;
-	}
-	
+void Person::printPerson() {
+	///cout << Name << " : " << Surname << " | " << Final << endl;
+	cout << setw(10) << Name << setw(10) << Surname << " | ";
+	for (auto& ref : HW) cout << setw(10) << ref;
+	cout << " | " << setw(3) << Exam << " ; final points: "
+		<< setw(5) << setprecision(2) << fixed << Final << endl;
+
+}

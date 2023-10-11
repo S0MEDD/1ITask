@@ -1,13 +1,11 @@
-
-
-#include "MyLib.h"
+﻿#include "Mylib1.h"
 
 int main()
 {
     vector <Person> Group;
     for (int j = 0; j < 2; j++) {
         string N, S;
-        int W, n, e;
+        int W, n, E;
         vector <int> temp;
         float Fin;
         cout << "Please input Person name and surname";
