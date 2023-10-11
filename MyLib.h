@@ -39,10 +39,6 @@ public:
 	///overloaded cout
 	/// final point calculation from average or median
 	void printPerson() {
-		///cout << Name << " : " << Surname << " | " << Final << endl;
-		cout << Name << " : " << Surname << " | ";
-		for (auto& ref : HW) cout << ref << " : ";
-		cout << Exam << " ; final points: " << Final << endl;
-	}
+
 };
 
