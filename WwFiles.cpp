@@ -1,7 +1,7 @@
 #include "WwFiles.h"
 
 void dataread(string ReadName) {
-	std::stringstream output_buffer;
+	std::stringstream output_buffer, output_buffer2;
 	string MyString;
 	vector<Person>Group;
 	std::ifstream open_f(ReadName);
@@ -55,17 +55,24 @@ void dataread(string ReadName) {
 	default: sort(Group.begin(), Group.end());
 	}
 
-	sort(Group.begin(), Group.end());
-	vector <Person> good, bad;
-	for (auto a = Group.end(); a > Group.begin(); a--)
-		if (a->getFinal() >= 5) good.push_back(*a);
-		else bad.push_back(*a);
+	sort(Group.begin(), Group.end()); 
+		vector <Person> good, bad; 
+		for (auto &a : Group)
+			if (a.getFinal() >= 5.) good.push_back(a);
+			else bad.push_back(a);
+		cout << "\n" << good.size() << bad.size() << Group.size();
 
+		std::ofstream output_fb("bad.txt");
+		std::ofstream output_fg("passed.txt");
+	
+    for (auto& B : good) output_buffer << B;
+	output_fg << output_buffer.str();
+	output_fg.close();
 
-	for (auto& B : Group)  output_buffer << B;
-	cout << output_buffer.str();
 	
-	
+	for (auto& B : bad)  output_buffer2 << B;
+	output_fb << output_buffer2.str(); 
+	output_fb.close();
 }
 
 void generateFiles() {

@@ -58,17 +58,16 @@ Person::~Person() {
 };
 void Person::printPerson() {
 	///cout << Name << " : " << Surname << " | " << Final << endl;
-	cout <<left<< setw(15) << Name << setw(15) << Surname << " | ";
+	cout <<left<< setw(15) << Name << setw(15) << Surname ;
 	for (auto& ref : HW) cout << setw(3) << ref;
-	cout << " | " << setw(3) << Exam << " ; final points: "
+	cout  << setw(3) << Exam << " ; final points: "
 		<< setw(5) << setprecision(2) << fixed << Final << endl;
 
 }
  std::ostream& operator<<(std::ostream& out, const Person& A) {
-	 out << left << setw(15) << A.Name <<right <<setw(15) << A.Surname
-		 << " | ";
+	 out << left << setw(15) << A.Name <<right <<setw(15) << A.Surname ;
 	 for (auto const& ref : A.HW) out << setw(3) << ref;
-	 out << " | " << setw(3) << A.Exam << " ; final points"
+	 out << setw(3) << A.Exam << " ; final points"
 		 << setw(5) << setprecision(2) << fixed << A.Final << endl;
 	 return out;
 
