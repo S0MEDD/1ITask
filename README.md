@@ -1,5 +1,5 @@
 # 2d Task
-Systemic programming task Gr n1
+Systemic programming task Gr n2
 
 # User Guide
 Step 1: Compile the Program Open a terminal (or command prompt) in the directory containing your source files (MyLib.cpp, WwFiles.cpp, test23.cpp).
