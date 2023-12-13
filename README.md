@@ -1,6 +1,7 @@
 # 1ITask
 Systemic programming task Gr n1
-User Guide
+
+# User Guide
 Step 1: Compile the Program Open a terminal (or command prompt) in the directory containing your source files (MyLib.cpp, WwFiles.cpp, test23.cpp).
 
 Step 2: Run the Program
