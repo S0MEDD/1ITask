@@ -8,7 +8,7 @@ Step 2: Run the Program
 Step 3: Use the Application
 Upon launching, the application will prompt you to choose one of the following options:
 
-*Automatic data generation (1)
+* Automatic data generation (1)
 * Reading data from a file (2)
 * File generation (3)
 *Manual data input (any other number)
