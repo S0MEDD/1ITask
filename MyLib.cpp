@@ -58,20 +58,30 @@ Person::~Person() {
 };
 void Person::printPerson() {
 	///cout << Name << " : " << Surname << " | " << Final << endl;
-	cout <<left<< setw(15) << Name << setw(15) << Surname << " | ";
+	cout <<left<< setw(15) << Name << setw(15) << Surname ;
 	for (auto& ref : HW) cout << setw(3) << ref;
-	cout << " | " << setw(3) << Exam << " ; final points: "
+	cout  << setw(3) << Exam << " ; final points: "
 		<< setw(5) << setprecision(2) << fixed << Final << endl;
 
 }
  std::ostream& operator<<(std::ostream& out, const Person& A) {
-	 cout << left << setw(15) << A.Name <<right <<setw(15) << A.Surname << " | ";
-	 for (auto& ref : A.HW) cout << setw(3) << ref;
-	 out << " | " << setw(3) << A.Exam << " ; final points: "
+	 out << left << setw(15) << A.Name <<right <<setw(15) << A.Surname ;
+	 for (auto const& ref : A.HW) out << setw(3) << ref;
+	 out << setw(3) << A.Exam << " ; final points"
 		 << setw(5) << setprecision(2) << fixed << A.Final << endl;
 	 return out;
 
 }
+
+ std::string Person ::output_to_string() {
+	 std::stringstream buf;
+	 buf <<  left << setw(15) << Name << right <<  setw(15) << Surname;
+	 
+ for (auto& ref : HW) buf << setw(3) << ref;
+ buf  << setw(10) << Exam << endl;
+ return buf.str();
+ }
+
  std::istream& operator>>(std::istream& in, Person& A) {
 	 in >> A.Name >> A.Surname >> A.Exam;
 	 for (int i = 0; i < 5; i++) {
@@ -84,3 +94,24 @@ void Person::printPerson() {
 	
 		 return in;
  }
+  bool operator < (const Person& A, Person& B) {
+	 return A.getFinal() < B.getFinal();
+ }
+  bool operator > (const Person& A, Person& B) {
+	 return A.getFinal() > B.getFinal();
+ }
+  bool operator == (const Person& A, Person& B) {
+	  return A.getFinal() == B.getFinal();
+  }
+
+
+ bool myLess(Person& A,  Person& B) {
+	 return A.getFinal() < B.getFinal();
+ }
+ bool lessName(Person& A, Person& B) {
+	 return A.getName() < B.getName();
+ }
+ bool lessSurname(Person& A, Person& B) {
+	 return A.getSurName() < B.getSurName();
+ }
+ 

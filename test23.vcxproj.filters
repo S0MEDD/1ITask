@@ -21,9 +21,15 @@
     <ClCompile Include="MyLib.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="WwFiles.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Mylib1.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="WwFiles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
